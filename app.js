@@ -20,8 +20,7 @@ app.use(bodyParser.json());
 /*express.static is a built in middleware function to serve static files.
  We are telling express server public folder is the place to look for the static files
 */
-app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(express.static(__dirname + '/public'));
 app.use('/helprequests', helprequests);
 
 /*app.get('/', (req, res) => {
