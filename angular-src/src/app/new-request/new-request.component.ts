@@ -18,15 +18,20 @@ export class NewRequestComponent implements OnInit {
   constructor(private reqService: HelpRequestService) { }
 
   ngOnInit() {
-    this.reqService.getAll().subscribe((response) => {
-      console.log(response);
-    });
   }
 
   onSubmit() {
-    this.reqService.addNew(this.newRequest).subscribe((response) => {
-      alert(response);
+    this.reqService.addNew(this.newRequest).subscribe((response: any) => {
+      if(response.success === true) {
+        alert('Thanks for the message!');
+      } else {
+        alert(`Error: ${response.message}`);
+      }
+
       console.log(response);
+    }, (error) => {
+      alert('Error!');
+      console.log(error);
     });
   }
 
