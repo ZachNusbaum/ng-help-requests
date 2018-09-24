@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const config = require('./config/database');
+const helprequests = require('./controllers/help_requests');
 
 const app = express();
 const port = 3000;
@@ -20,6 +21,8 @@ app.use(bodyParser.json());
  We are telling express server public folder is the place to look for the static files
 */
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use('/helprequests', helprequests);
 
 app.get('/', (req, res) => {
   res.send("Invalid page");
