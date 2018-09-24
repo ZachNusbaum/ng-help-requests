@@ -24,9 +24,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/helprequests', helprequests);
 
-app.get('/', (req, res) => {
+/*app.get('/', (req, res) => {
   res.send("Invalid page");
-});
+});*/
 
 app.listen(port, () => {
   console.log(`Starting the server at port ${port}`);
