@@ -8,11 +8,13 @@ import { HelpRequestService } from './help-request.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NewRequestComponent } from './new-request/new-request.component';
+import { ViewRequestsComponent } from './view-requests/view-requests.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NewRequestComponent
+    NewRequestComponent,
+    ViewRequestsComponent
   ],
   imports: [
     BrowserModule,

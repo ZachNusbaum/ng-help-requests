@@ -22,7 +22,7 @@ export class NewRequestComponent implements OnInit {
 
   onSubmit() {
     this.reqService.addNew(this.newRequest).subscribe((response: any) => {
-      if(response.success === true) {
+      if (response.success === true) {
         alert('Thanks for the message!');
       } else {
         alert(`Error: ${response.message}`);
