@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  base_uri: 'https://zdn-help-requests.herokuapp.com/helprequests'
+  base_uri: 'https://ng-help.herokuapp.com/helprequests'
 };
