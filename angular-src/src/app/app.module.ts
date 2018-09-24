@@ -1,18 +1,26 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+
+import { HelpRequestService } from './help-request.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NewRequestComponent } from './new-request/new-request.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NewRequestComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [HelpRequestService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
