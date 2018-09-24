@@ -1,4 +1,13 @@
-<h1>Help Request Center</h1>
-<a routerLink="/">Add New</a>
-<a routerLink="/requests">View All</a>
+
+<div class="container">
+  <h1>Help Request Center</h1>
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a routerLink="/" class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Add New</a>
+    </li>
+    <div class="nav-item">
+      <a routerLink="/requests" class="nav-link" routerLinkActive="active">View All</a>
+    </div>
+  </ul>
+</div>
 <router-outlet></router-outlet>
