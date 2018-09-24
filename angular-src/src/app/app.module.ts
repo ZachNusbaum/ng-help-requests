@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { HelpRequestService } from './help-request.service';
 
@@ -18,7 +18,7 @@ import { NewRequestComponent } from './new-request/new-request.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpModule
+    HttpClientModule
   ],
   providers: [HelpRequestService],
   bootstrap: [AppComponent]
