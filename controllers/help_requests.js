@@ -1,9 +1,17 @@
 const express = require('express');
 const router = express.Router();
-//const helpRequests = require('../models/help_requests')
+const helpRequest = require('../models/helprequest');
 
 router.get('/', (req, res) => {
-  res.json({test: 'success'});
+  helpRequest.getAll((err, reqs) => {
+    console.log(reqs);
+    if(err) {
+      res.json({success: 'false', message: `Failed to load requests. Err: ${err}`});
+    } else {
+      res.write(JSON.stringify({success: true, reqs: reqs}));
+      res.end();
+    }
+  });
 });
 
 module.exports = router;
