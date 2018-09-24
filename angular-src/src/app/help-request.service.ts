@@ -1,12 +1,13 @@
 import { HelpRequest } from './models/help-request';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HelpRequestService {
-  base_uri = 'http://localhost:3000/helprequests';
+  base_uri = environment.base_uri;
 
   constructor(private http: HttpClient) { }
 
