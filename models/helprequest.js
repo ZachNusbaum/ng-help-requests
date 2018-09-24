@@ -20,3 +20,7 @@ const HelpRequest = module.exports = mongoose.model('HelpRequest', HelpRequestSc
 module.exports.getAll = (callback) => {
   HelpRequest.find(callback);
 };
+
+module.exports.addNew = (newRequest, callback) => {
+  newRequest.save(callback);
+};

@@ -14,4 +14,21 @@ router.get('/', (req, res) => {
   });
 });
 
+router.post('/', (req, res, next) => {
+  let newRequest = new helpRequest({
+    fullname: req.body.fullname,
+    subject: req.body.fullname,
+    message: req.body.message,
+    urgent: req.body.urgent
+  });
+
+  helpRequest.addNew(newRequest, (err, list) => {
+    if(err) {
+      res.json({success: false, message: `Error! ${err}`});
+    } else {
+      res.json({success: true, message: 'Added successfully!'});
+    }
+  });
+});
+
 module.exports = router;
