@@ -19,7 +19,7 @@ export class ViewRequestsComponent implements OnInit {
   }
 
   remove(id) {
-    this.reqService.delete(id).subscribe((response) => {
+    this.reqService.delete(id).subscribe((response: any) => {
       if (response.success === true) {
         alert('Success!');
         this.requests = this.requests.filter(req => req._id !== id);
