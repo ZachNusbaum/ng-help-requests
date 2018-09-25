@@ -24,3 +24,8 @@ module.exports.getAll = (callback) => {
 module.exports.addNew = (newRequest, callback) => {
   newRequest.save(callback);
 };
+
+module.exports.deleteId = (id, callback)=> {
+  let query = {_id: id};
+  HelpRequest.remove(query, callback);
+};

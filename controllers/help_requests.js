@@ -31,4 +31,18 @@ router.post('/', (req, res, next) => {
   });
 });
 
+router.delete('/:id', (req, res, next) => {
+  let id = req.params.id;
+
+  helpRequest.deleteId(id, (err, request) => {
+    if(err) {
+      res.json({success: false, message: 'Could not delete.'});
+    } else if(request) {
+      res.json({success: true, message: 'Deleted!'});
+    } else {
+      res.json({success: false});
+    }
+  })
+});
+
 module.exports = router;

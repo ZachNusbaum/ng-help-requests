@@ -1,4 +1,24 @@
-<p>
-  view-requests works!
-</p>
-<pre>{{requests | json}}</pre>
+<div class="container">
+  <table class="table table-bordered table-striped table-hover table-sm">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Full name</th>
+        <th>Subject</th>
+        <th>Message</th>
+        <th>Urgent</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let req of requests">
+        <td>{{req._id}}</td>
+        <td>{{req.fullname}}</td>
+        <td>{{req.subject || 'No subject.'}}</td>
+        <td>{{req.message}}</td>
+        <td>{{req.urgent ? 'Yes' : 'No'}}</td>
+        <td><a href="#" (click)="remove(req._id)">(x)</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

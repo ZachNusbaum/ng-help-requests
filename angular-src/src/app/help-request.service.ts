@@ -21,4 +21,10 @@ export class HelpRequestService {
     let headers = new HttpHeaders({'Content-Type': 'application/json'});
     return this.http.post(uri, newRequest, {headers: headers});
   }
+
+  public delete(id: string) {
+    let uri = `${this.base_uri}/${id}`;
+    let headers = new HttpHeaders({'Content-Type': 'application/json'});
+    return this.http.delete(uri, {headers: headers});
+  }
 }
